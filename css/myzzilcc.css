@@ -152,7 +152,7 @@ body {
 	-moz-animation-iteration-count: infinite;
 	animation: pulse 1s;
 	animation-iteration-count: infinite;
-	color: blue;
+	color: red;
 }
 
 .you {

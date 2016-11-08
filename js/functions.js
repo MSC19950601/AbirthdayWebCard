@@ -10,20 +10,20 @@ wangEditor.config.mapAK = '01ca71714f96f741aa8fb203d80d7537';
 // 显示按钮文字
 switch(Cookies.get('type')) {
 	case "love":
-		$('#toggle').attr("value", "Final");
+		$('#toggle').attr("value", "Love");
 		$('#myzzilcc').show(0);
 		$('#tools').hide(0);
 		$('#notebooks').hide(0);
 		break;
 	case "tools":
-		$('#toggle').attr("value", ":-)");
+		$('#toggle').attr("value", "Tools");
 		$('#myzzilcc').hide(0);
 		$('#tools').show(0);
 		$('#notebooks').hide(0);
 		break;
 	case "notebooks":
 		$('#sakura').hide();
-		$('#toggle').attr("value", "Open");
+		$('#toggle').attr("value", "Notebooks");
 		$('#myzzilcc').hide(0);
 		$('#tools').hide(0);
 		$('#notebooks').show(0);
@@ -47,21 +47,21 @@ switch($('#search_engine').val()) {
 $('#toggle').click(function() {
 	switch(Cookies.get('type')) {
 		case "love": // 如果当前状态是love
-			$('#toggle').attr("value", ":-)");
+			$('#toggle').attr("value", "Tools");
 			Cookies.set('type', 'tools', {expires: 365, path: '/'}); // 切换到tools
 			$('#myzzilcc').hide(0);
 			$('#tools').show(300);
 			$('#notebooks').hide(0);
 			break;
 		case "tools": // 如果当前状态是tools
-			$('#toggle').attr("value", "Open");
+			$('#toggle').attr("value", "Notebooks");
 			Cookies.set('type', 'notebooks', {expires: 365, path: '/'}); // 切换到notebooks
 			$('#myzzilcc').hide(0);
 			$('#tools').hide(0);
 			$('#notebooks').show(300);
 			break;
 		case "notebooks":
-			$('#toggle').attr("value", "Final");
+			$('#toggle').attr("value", "Love");
 			Cookies.set('type', 'love', {expires: 365, path: '/'}); // 切换到love
 			$('#myzzilcc').show(300);
 			$('#tools').hide(0);
@@ -100,13 +100,13 @@ $.ajax({
 });
 
 // 搜索框默认文字
-$('#search').val('yeah!');
+$('#search').val('You are my zzilcc.');
 $('#search').focus(function() {
-	if($('#search').val() == 'yeah!') $('#search').val('');
+	if($('#search').val() == 'You are my zzilcc.') $('#search').val('');
 });
 
 $('#search').blur(function() {
-	if($('#search').val() == '') $('#search').val('yeah!');
+	if($('#search').val() == '') $('#search').val('You are my zzilcc.');
 });
 
 // Notebooks 页面
@@ -427,7 +427,7 @@ function notebooks() {
 			break;
 	}
 }
-// notebooks();
+notebooks();
 
 // 事件检测
 
